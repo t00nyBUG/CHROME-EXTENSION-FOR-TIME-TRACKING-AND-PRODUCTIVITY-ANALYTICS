@@ -164,3 +164,6 @@ The **Productivity Tracker** is more than a stylish popup—it’s a real-world 
 It’s compact. It’s elegant. And most importantly, it helps you become more aware of how your time is spent.
 
 OUTPUT:
+
+<img width="1919" height="1013" alt="Image" src="https://github.com/user-attachments/assets/a704ab0c-eb8b-4733-8891-df7a5105426e" />
+<img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/2302fb17-6fba-4786-8b5d-f6ff1f46b470" />
