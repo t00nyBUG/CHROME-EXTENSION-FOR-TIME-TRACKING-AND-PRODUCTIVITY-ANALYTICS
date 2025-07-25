@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      min-height: 400px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    
+    .stats-container {
+      padding: 20px;
+    }
+    
+    .stat-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 10px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-bottom: 5px;
+    }
+    
+    .stat-value {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+    
+    .progress-productive {
+      background: #10b981;
+    }
+    
+    .progress-unproductive {
+      background: #f59e0b;
+    }
+    
+    .website-list {
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    
+    .website-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .website-name {
+      font-size: 14px;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .website-time {
+      font-size: 12px;
+      opacity: 0.8;
+      min-width: 50px;
+      text-align: right;
+    }
+    
+    .category-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    
+    .category-productive {
+      background: #10b981;
+    }
+    
+    .category-unproductive {
+      background: #f59e0b;
+    }
+    
+    .category-neutral {
+      background: #6b7280;
+    }
+    
+    .action-buttons {
+      padding: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 10px;
+    }
+    
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .btn-primary {
+      background: #2563eb;
+    }
+    
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📊 Productivity Tracker</h1>
+  </div>
+  
+  <div class="stats-container">
+    <div class="stat-item">
+      <div class="stat-label">Today's Total Time</div>
+      <div class="stat-value" id="totalTime">0h 0m</div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-label">Productive Time</div>
+      <div class="stat-value" id="productiveTime">0h 0m</div>
+      <div class="progress-bar">
+        <div class="progress-fill progress-productive" id="productiveProgress"></div>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-label">Unproductive Time</div>
+      <div class="stat-value" id="unproductiveTime">0h 0m</div>
+      <div class="progress-bar">
+        <div class="progress-fill progress-unproductive" id="unproductiveProgress"></div>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-label">Top Websites Today</div>
+      <div class="website-list" id="websiteList">
+        <!-- Websites will be populated here -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="action-buttons">
+    <button class="btn btn-primary" id="dashboardBtn">Open Dashboard</button>
+    <button class="btn" id="resetBtn">Reset Today's Data</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
